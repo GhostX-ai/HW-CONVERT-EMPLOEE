@@ -15,23 +15,25 @@ namespace Converter
             {
                 case 1:
                     {
-                        System.Console.WriteLine("$ "+mn.ToUsd(som));
-                        System.Console.WriteLine("som "+mn.FromUsd(som));
+                        System.Console.WriteLine("$ " + mn.ToUsd(som));
+                        System.Console.WriteLine("som " + mn.FromUsd(som));
                     }
                     break;
                 case 2:
                     {
-                        System.Console.WriteLine("eur "+mn.ToEur(som));
-                        System.Console.WriteLine("som "+mn.FromEur(som));
+                        System.Console.WriteLine("eur " + mn.ToEur(som));
+                        System.Console.WriteLine("som " + mn.FromEur(som));
                     }
                     break;
                 case 3:
                     {
-                        System.Console.WriteLine("rub "+mn.ToRub(som));
-                        System.Console.WriteLine("som "+mn.FromRub(som));
+                        System.Console.WriteLine("rub " + mn.ToRub(som));
+                        System.Console.WriteLine("som " + mn.FromRub(som));
                     }
                     break;
             }
+            Emploee em = new Emploee() { lastname = "Egamov", name = "Khurshed", payment = 50000 };
+            System.Console.WriteLine(em.PaynemtwithProc());
             Console.ReadKey();
         }
     }
@@ -73,6 +75,16 @@ namespace Converter
         public double FromRub(double som)
         {
             return ToRub(som) * rub;
+        }
+    }
+    class Emploee
+    {
+        public string name { get; set; }
+        public string lastname { get; set; }
+        public double payment { get; set; }
+        public double PaynemtwithProc()
+        {
+            return payment * 0.14;
         }
     }
 }
